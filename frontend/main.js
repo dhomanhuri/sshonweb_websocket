@@ -14,6 +14,16 @@ function getQueryParams() {
     }
     return params;
 }
+const fitAddon = new window.FitAddon.FitAddon();
+term.loadAddon(fitAddon);
+
+// Sesuaikan ukuran terminal dengan kontainer
+fitAddon.fit();
+
+// Dengarkan perubahan ukuran browser
+window.addEventListener('resize', () => {
+    fitAddon.fit();
+});
 
 const socket = io('http://10.20.11.3:3000');
 socket.on('output', (data) => term.write(data));
