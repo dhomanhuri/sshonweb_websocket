@@ -11,5 +11,5 @@ services:
     build:
       context: ./frontend
     ports:
-      - "8081:80"
+      - "9081:80"
     restart: always
